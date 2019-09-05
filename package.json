@@ -2,7 +2,7 @@
     "name": "szwhg-adminweb",
     "version": "1.0.0",
     "description": "ueditor server nodejs koa",
-    "author": "guojs <381374503@qq.com>",
+    "author": "guojs <271783186@qq.com>",
     "private": true,
     "scripts": {
         "server": "node bin/www"
@@ -11,6 +11,8 @@
         "async-busboy": "^0.6.2",
         "busboy": "^0.2.14",
         "koa": "^2.4.1",
+        "npm": "^6.9.0",
+        "uuid": "3.3.3",
         "koa-body": "^2.5.0",
         "koa-log4": "^2.3.0",
         "koa-mount": "^3.0.0",
@@ -19,6 +21,7 @@
         "koa-static": "^4.0.2",
         "koa-views": "^6.1.3",
         "koa2-connect": "^1.0.2",
+        "koa2-cors": "^2.0.6",
         "lodash": "^4.17.4"
     },
     "devDependencies": {
