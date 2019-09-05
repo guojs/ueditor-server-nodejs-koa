@@ -13,8 +13,8 @@ const logUtil = require('./utils/log_util');
 const ueditor = require('./middleware/ueditor');
 // const ueditor=require('ueditor')
 const uploadfile = require('./middleware/uploadfile');
-const historyApiFallback = require('./middleware/historyApiFallback')
-    // -----------------------------  实例化、变量  ------------------------------------------
+
+// -----------------------------  实例化、变量  ------------------------------------------
 const app = new Koa()
 app.use(koacors())
 
@@ -58,27 +58,18 @@ app.use(ueditor(DEFAULT_OPTION));
 //  
 
 // 文件上传
-const UPLOADFILE_OPTION = {
-    url: '/base/files',
-    'provider': 'local',
-    folder: userResourceRootDir
-}
-app.use(uploadfile(UPLOADFILE_OPTION));
+// const UPLOADFILE_OPTION = {
+//     url: '/base/files',
+//     'provider': 'local',
+//     folder: userResourceRootDir
+// }
+// app.use(uploadfile(UPLOADFILE_OPTION));
 
 // 配置ctx.body解析中间件
 app.use(koaBody({ multipart: true, json: true, form: true, text: true }));
 
-// handle fallback for HTML5 history API
-// 对路由history直接走historyApiFallback,而不是用服务端渲染
-app.use(historyApiFallback({
-    verbose: true,
-    index: '/index.html',
-    rewrites: [
-        { from: /^\/index$/, to: '/index.html' },
-        { from: /^\/login/, to: '/login.html' }
-    ],
-    path: /^\/(index|login)/
-}))
+
+
 
 // ------------------------------  routes  -----------------------------------------------
 const router = new Router()

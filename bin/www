@@ -85,10 +85,11 @@ function onError(error) {
  */
 // 事件绑定函数
 function onListening() {
-    debugger;
+
     var addr = server.address();
     var bind = typeof addr === 'string' ?
         'pipe ' + addr :
         'port ' + addr.port;
+    console.log('server Listening on' + bind)
     debug('Listening on ' + bind);
 }
