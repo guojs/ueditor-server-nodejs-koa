@@ -1,0 +1,14 @@
+{
+    "apps": [{
+        "name": "creatoo-Ueditor-server",
+        "script": "./bin/www",
+        "exec_mode": "cluster",
+        "instances": 2,
+        "autorestart": false,
+        "node_args": [],
+        "args": [],
+        "env": {
+            "NODE_ENV": "develop"
+        }
+    }]
+}
